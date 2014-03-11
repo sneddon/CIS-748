@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>MS CIS 748 OAuth</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+		<h3 class=""><small class="glyphicon glyphicon-cog"></small> Google OAuth 2.0</h3>
+    	<div class="well">
+			<button class="btn btn-lg btn-primary btn-block" id="authorize-button"><span class="glyphicon glyphicon-user"></span>  Authenticate with Google</button>
+		</div>
+
+    </div>
+
+    <!-- The 2 Buttons for the user to interact with
+    <button id="authorize-button" style="visibility: hidden">Authorize</button><br/>
+    <button id="make-api-call-button" style="visibility: hidden">Get Visits</button>
+    -->
+
+
+    <!-- These JavaScript files will be created later on in the tutorial -->
+    <script src="js/cis748.keys.js"></script>
+    <script src="js/cis748.auth.js"></script>
+
+    <!-- Load the Client Library. Use the onload parameter to specify a callback function -->
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+  </body>
+</html>
