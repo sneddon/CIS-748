@@ -32,15 +32,11 @@ function handleAuthResult(authResult) {
 
 // Authorized user
 function handleAuthorized() {
-    // $("#authorize-button").addClass("hide");
-    // $("#test-api").removeClass("hide");
     console.log("handleAuthorized");
 }
 
 // Unauthorized user
 function handleUnAuthorized() {
-    // $("#authorize-button").removeClass("hide");
-    // $("#test-api").addClass("hide");
     console.log("handleUnAuthorized");
 }
 
