@@ -1,8 +1,23 @@
 //set scope
 var scopes = 'https://www.googleapis.com/auth/analytics.readonly';
 
+function chuckHappy() {
+  console.log("inChuck");
+  $('#chuckHappy').show();
+  $('#chuckNotHappy').hide();
+
+}
+
+function chuckNotHappy() {
+  console.log("inChuck");
+  $('#chuckHappy').hide();
+  $('#chuckNotHappy').show();
+
+}
+
 // This function is called after the Client Library has finished loading
 function handleClientLoad() {
+
   // 1. Set the API Key
   gapi.client.setApiKey(apiKey);
 
@@ -33,11 +48,13 @@ function handleAuthResult(authResult) {
 // Authorized user
 function handleAuthorized() {
     console.log("handleAuthorized");
+    chuckHappy();
 }
 
 // Unauthorized user
 function handleUnAuthorized() {
     console.log("handleUnAuthorized");
+    chuckNotHappy();
 }
 
 
