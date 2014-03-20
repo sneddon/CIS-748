@@ -1,20 +1,6 @@
 //set scope
 var scopes = 'https://www.googleapis.com/auth/analytics.readonly';
 
-function chuckHappy() {
-  console.log("inChuck");
-  $('#chuckHappy').show();
-  $('#chuckNotHappy').hide();
-
-}
-
-function chuckNotHappy() {
-  console.log("inChuck");
-  $('#chuckHappy').hide();
-  $('#chuckNotHappy').show();
-
-}
-
 // This function is called after the Client Library has finished loading
 function handleClientLoad() {
 
@@ -48,13 +34,28 @@ function handleAuthResult(authResult) {
 // Authorized user
 function handleAuthorized() {
     console.log("handleAuthorized");
-    chuckHappy();
+
+    // display happy chuck
+    $('#chuckHappy').show();
+    $('#chuckNotHappy').hide();
+
+    // display logout button
+    $('#logout-button').show();
+    $('#authorize-button').hide();
 }
 
 // Unauthorized user
 function handleUnAuthorized() {
     console.log("handleUnAuthorized");
-    chuckNotHappy();
+
+    // display happy chuck
+    $('#chuckHappy').hide();
+    $('#chuckNotHappy').show();
+
+    // display logout button
+    $('#logout-button').hide();
+    $('#authorize-button').show();
+
 }
 
 
