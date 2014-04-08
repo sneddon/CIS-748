@@ -1,5 +1,5 @@
 //set scope
-var scopes = 'https://www.googleapis.com/auth/analytics.readonly';  
+var scopes = 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email';  
 
 // This function is called after the Client Library has finished loading
 function handleClientLoad() {
