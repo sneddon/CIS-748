@@ -1,5 +1,5 @@
 //set scope
-var scopes = 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email';  
+var scopes = 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email';
 
 // This function is called after the Client Library has finished loading
 function handleClientLoad() {
@@ -60,6 +60,17 @@ function handleUnAuthorized() {
 
 
 $("#authorize-button").on("click", function (e){
-  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+
+  // for now, before I logout, get the user's ID
+  gapi.client.load('plus', 'v1', function () {
+  var request = gapi.client.plus.people.get({
+        'userId': 'me'
+    });
+  request.execute(function (resp) {
+        console.log(resp);
+    });
+
+
+  // gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
   return false;
 });
