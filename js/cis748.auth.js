@@ -61,16 +61,6 @@ function handleUnAuthorized() {
 
 $("#authorize-button").on("click", function (e){
 
-  // for now, before I logout, get the user's ID
-  gapi.client.load('plus', 'v1', function () {
-  var request = gapi.client.plus.people.get({
-        'userId': 'me'
-    });
-  request.execute(function (resp) {
-        console.log(resp);
-    });
-
-
-  // gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
   return false;
 });
