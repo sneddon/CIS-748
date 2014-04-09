@@ -60,7 +60,7 @@ function handleUnAuthorized() {
 
 
 $("#authorize-button").on("click", function (e){
-
   gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+
   return false;
 });
