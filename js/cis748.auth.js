@@ -1,6 +1,6 @@
 //set scope
 // var scopes = 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email';
-var scopes = 'openid profile email'
+var scopes = 'openid profile email phone'
 
 // This function is called after the Client Library has finished loading
 function handleClientLoad() {
@@ -18,13 +18,22 @@ function checkAuth() {
   gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
 }
 
+function getUserInfo () {
+  var request = gapi.client.oauth2.userinfo.get();
+  request.execute(handleAuthorized);
+}
+
+function loadOAuthAPI() {
+  gapi.client.load("oauth2", "v1", getUserInfo);
+}
+
 function handleAuthResult(authResult) {
   if (authResult) {
     // The user has authorized access
 
     console.log(authResult.status);
 
-    handleAuthorized();
+    loadOAuthAPI();
 
   } else {
     // User has not Authenticated and Authorized
@@ -33,7 +42,7 @@ function handleAuthResult(authResult) {
 }
 
 // Authorized user
-function handleAuthorized() {
+function handleAuthorized(userInfo) {
     console.log("handleAuthorized");
 
     // display happy chuck
@@ -43,6 +52,8 @@ function handleAuthorized() {
     // display logout button
     $('#logout-button').show();
     $('#authorize-button').hide();
+
+    console.log(userInfo.email);
 }
 
 // Unauthorized user
