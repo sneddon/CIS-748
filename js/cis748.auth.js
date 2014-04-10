@@ -1,5 +1,6 @@
 //set scope
-var scopes = 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email';
+// var scopes = 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email';
+var scopes = 'openid profile email'
 
 // This function is called after the Client Library has finished loading
 function handleClientLoad() {
