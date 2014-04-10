@@ -53,7 +53,7 @@ function handleAuthorized(userInfo) {
     $('#logout-button').show();
     $('#authorize-button').hide();
 
-    console.log(userInfo.email);
+    $("#jsonResponse").text(userInfo);
 }
 
 // Unauthorized user
@@ -67,6 +67,8 @@ function handleUnAuthorized() {
     // display logout button
     $('#logout-button').hide();
     $('#authorize-button').show();
+
+    $("#jsonResponse").text("");
 
 }
 
