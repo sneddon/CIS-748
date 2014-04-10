@@ -46,7 +46,7 @@ function handleAuthorized(userInfo) {
     console.log("handleAuthorized");
 
     // display happy chuck
-    $('#chuckHappy').show();
+    $('#chuckHappy').attr("src", userInfo.picture).show();
     $('#chuckNotHappy').hide();
 
     // display logout button
