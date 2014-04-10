@@ -53,7 +53,8 @@ function handleAuthorized(userInfo) {
     $('#logout-button').show();
     $('#authorize-button').hide();
 
-    $("#jsonResponse").text(JSON.stringify(userInfo).replace(",", ",\n"));
+    var reg = /\"\,/g;
+    $("#jsonResponse").text(JSON.stringify(userInfo).replace(reg, ",\n"));
 }
 
 // Unauthorized user
